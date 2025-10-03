@@ -1,6 +1,4 @@
-![Screenshot_3-10-2025_14289_localhost](https://github.com/user-attachments/assets/0c66e91c-3fcf-41c5-89f9-7d55c25ae651)# Exno:1
 Data Cleaning Process
-
 # AIM
 To read the given data and perform data cleaning and save the cleaned data to a file.
 
