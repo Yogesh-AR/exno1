@@ -23,7 +23,7 @@ STEP 6: Use zscore of to remove outliers
 # Coding and Output
 ```py
 import pandas as pd
-df=pd.read_csv("SAMPLEIDS.csv")
+df=pd.read_csv("Data_set.csv")
 df
 ```
 <img width="820" height="698" alt="image" src="https://github.com/user-attachments/assets/969079fb-7fcb-4145-9496-58f51e599767" />
