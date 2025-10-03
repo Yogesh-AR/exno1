@@ -1,4 +1,4 @@
-# Exno:1
+![Screenshot_3-10-2025_14289_localhost](https://github.com/user-attachments/assets/0c66e91c-3fcf-41c5-89f9-7d55c25ae651)# Exno:1
 Data Cleaning Process
 
 # AIM
@@ -23,118 +23,142 @@ STEP 6: Use zscore of to remove outliers
 # Coding and Output
 ```py
 import pandas as pd
-df=pd.read_csv("Data_set.csv")
-df
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+print(df)
 ```
-<img width="820" height="698" alt="image" src="https://github.com/user-attachments/assets/969079fb-7fcb-4145-9496-58f51e599767" />
-
-```py
-df.head()
-```
-<img width="827" height="201" alt="image" src="https://github.com/user-attachments/assets/3a36b996-875a-475f-b585-658fc23d6858" />
-
-```py
-df.tail()
-```
-<img width="813" height="193" alt="image" src="https://github.com/user-attachments/assets/f4c61c1b-a997-4e94-ac6a-336dcf86a375" />
+<img width="1075" height="823" alt="Screenshot 2025-10-03 135621" src="https://github.com/user-attachments/assets/47d13b07-7d8b-4598-a27a-2aa985d6b0fb" />
 
 ```py
 df.isnull()
 ```
-<img width="662" height="691" alt="image" src="https://github.com/user-attachments/assets/458d424f-079e-4ac3-aadf-5e414816c365" />
+<img width="971" height="583" alt="Screenshot 2025-10-03 135946" src="https://github.com/user-attachments/assets/3c827297-ad32-4de2-b17f-8990c51ec0c7" />
 
 ```py
 df.isnull().sum()
 ```
-<img width="179" height="451" alt="image" src="https://github.com/user-attachments/assets/760600ce-86e8-4b05-8362-400d582c540d" />
+<img width="637" height="234" alt="Screenshot 2025-10-03 140103" src="https://github.com/user-attachments/assets/d2b82721-4ca2-4a58-81c3-1b1e5aefd56c" />
 
 ```py
-df.isnull().any()
+import pandas as pd
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+drop=df.dropna(axis=1)
+print("before dropna \n\n",df)
+print("after dropna \n\n",drop)
 ```
-<img width="259" height="451" alt="image" src="https://github.com/user-attachments/assets/86894533-6bb8-415c-b81e-a7f465a4937c" />
+<img width="883" height="876" alt="Screenshot 2025-10-03 140619" src="https://github.com/user-attachments/assets/767a436a-3cf6-4b7a-bda3-6720e62d9f45" />
 
 ```py
-df.dropna(axis=0)
+import pandas as pd
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+drop=df.dropna(axis=1,inplace=True)
+print("before dropna",df)
+print("after dropna",drop)
 ```
-<img width="828" height="447" alt="image" src="https://github.com/user-attachments/assets/bbddcfad-afb1-4de1-82a7-457d57d925a5" />
+<img width="764" height="247" alt="Screenshot 2025-10-03 140919" src="https://github.com/user-attachments/assets/2bb0af3d-4702-44bc-946d-7a742c44064d" />
 
 ```py
-df.dropna(axis=1)
-```
-<img width="248" height="709" alt="image" src="https://github.com/user-attachments/assets/c2267afc-f5f3-4558-ac79-0d5a94629e16" />
-
-```py
-df.fillna("empty")
-```
-<img width="858" height="696" alt="image" src="https://github.com/user-attachments/assets/7abfaae5-3566-4e24-a970-355f058d33ab" />
-
-```py
+import pandas as pd
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
 df.fillna(method='ffill')
+print(df)
 ```
-<img width="820" height="695" alt="image" src="https://github.com/user-attachments/assets/b8b48513-fedb-4ac8-b89a-351774162e73" />
+<img width="884" height="646" alt="Screenshot 2025-10-03 141009" src="https://github.com/user-attachments/assets/753212db-6f53-48a6-b48a-dbdfbb0728e2" />
 
 ```py
+import pandas as pd
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+loc=df.iloc[1:21:3]
+print(loc)
+```
+![Screenshot_3-10-2025_14138_localhost](https://github.com/user-attachments/assets/bcb20f75-d0ae-4fd1-a1e8-d81015b1b092)
+
+```py
+import pandas as pd
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+df=df.fillna(df.median(numeric_only=True))
+print(df)
+```
+![Screenshot_3-10-2025_141726_localhost](https://github.com/user-attachments/assets/fd526bcb-bcb0-408a-b726-0ee99c721c2e)
+
+```py
+import pandas as pd
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
 df.fillna(method='bfill')
+print(df)
 ```
-<img width="821" height="688" alt="image" src="https://github.com/user-attachments/assets/ddb20000-cd2a-4f0e-8243-433ad5422f12" />
+![Screenshot_3-10-2025_141726_localhost](https://github.com/user-attachments/assets/557756c5-17a1-4825-a459-129bdefc5a88)
 
 ```py
-df.fillna({'NAME':'SRI','GENDER':'MALE','ADDRESS':'CHITHUR','M1':90,'M2':90,'M3':89,'M4':87})
+import pandas as pd
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+df=df.mode()
+print(df)
 ```
-<img width="809" height="703" alt="image" src="https://github.com/user-attachments/assets/7e40dccf-d9f4-4719-a739-d362761f2ced" />
+![Screenshot_3-10-2025_141726_localhost](https://github.com/user-attachments/assets/b6f4b21a-e2ae-4450-a246-1582326ce678)
 
 ```py
-ir=pd.read_csv("iris.csv")
-ir
+import pandas as pd
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+df=df.drop_duplicates()
+print(df)
 ```
-<img width="528" height="386" alt="image" src="https://github.com/user-attachments/assets/25f51946-fcaa-49d1-819d-5368174cc360" />
+![Screenshot_3-10-2025_14213_localhost](https://github.com/user-attachments/assets/2de1df0d-d5cb-4d97-9c83-e24f0fb453a4)
 
 ```py
-ir.describe()
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+df.info()
 ```
-<img width="473" height="291" alt="image" src="https://github.com/user-attachments/assets/13bdf354-5e41-4f0c-8b5d-4169e707467b" />
+![Screenshot_3-10-2025_142514_localhost](https://github.com/user-attachments/assets/3997c4c1-594e-45a9-a3a2-994f9889f333)
 
 ```py
-import seaborn as sns
-sns.boxplot(x='sepal_width',data=ir)
+import matplotlib.pyplot as plt
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+plt.bar(names,values,color="black")
+plt.show()
 ```
-<img width="553" height="455" alt="image" src="https://github.com/user-attachments/assets/ab82f349-8b58-4c77-b43d-6756b6419507" />
-
-```
-q1=ir.sepal_width.quantile(0.25)
-q3=ir.sepal_width.quantile(0.75)
-iqr=q3-q1
-print(iqr)
-```
-<img width="772" height="34" alt="image" src="https://github.com/user-attachments/assets/de0b02df-0536-45fd-9ad8-aa98337c73a0" />
+![Screenshot_3-10-2025_142631_localhost](https://github.com/user-attachments/assets/4f7e448b-8a05-4feb-a9ea-4573619fbf50)
 
 ```py
-rid=ir[((ir.sepal_width<(q1-1.5*iqr))|(ir.sepal_width>(q3+1.5*iqr)))]
-rid['sepal_width']
+import matplotlib.pyplot as plt
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+plt.barh(names,values,color="gray")
+plt.show()
 ```
-<img width="184" height="204" alt="image" src="https://github.com/user-attachments/assets/70e60235-ad24-4cb3-9c0e-4612c66791ec" />
+![Screenshot_3-10-2025_142718_localhost](https://github.com/user-attachments/assets/fa2e4f73-74e3-407d-99f3-a057705841f9)
 
 ```py
-delid=ir[~((ir.sepal_width<(q1-1.5*iqr))|(ir.sepal_width>(q3+1.5*iqr)))]
-delid
+import matplotlib.pyplot as plt
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+plt.plot(names,values,color="silver")
+plt.show()
 ```
-<img width="534" height="404" alt="image" src="https://github.com/user-attachments/assets/b83bfaa6-66a5-4518-83d9-118be88d015e" />
+![Screenshot_3-10-2025_14289_localhost](https://github.com/user-attachments/assets/2d45fe19-875f-49d8-ac56-32e5b7262839)
 
 ```py
-sns.boxplot(x='sepal_width',data=delid)
+import matplotlib.pyplot as plt
+d=pd.read_csv("Data_set.csv")
+df=pd.DataFrame(d)
+plt.scatter(names,values,color="black")
+plt.show()
 ```
-<img width="545" height="447" alt="image" src="https://github.com/user-attachments/assets/9a6d7a59-1197-43cd-9444-9e1f48483153" />
+![Screenshot_3-10-2025_142827_localhost](https://github.com/user-attachments/assets/c9f1e823-5a1d-4427-ae83-5817cdeb2a3a)
 
-```py
-z=np.abs(stats.zscore(ir['sepal_width']))
-z
-```
-<img width="569" height="530" alt="image" src="https://github.com/user-attachments/assets/f525fe24-5c7c-47e1-a62f-92338cb81cce" />
-
-```py
-ir1=ir[z<3]
-ir1
-```
-<img width="534" height="406" alt="image" src="https://github.com/user-attachments/assets/bf7ba979-43cb-4587-93be-1347f5a6f7de" /> <<include your coding and its corressponding output screen shots here>>
 # Result
           <<include your Result here>>
+
